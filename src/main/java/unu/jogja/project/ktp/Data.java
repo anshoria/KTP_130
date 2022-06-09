@@ -9,7 +9,10 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -39,8 +42,13 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Data.findByBerlakuhingga", query = "SELECT d FROM Data d WHERE d.berlakuhingga = :berlakuhingga")})
 public class Data implements Serializable {
 
+    @Lob
+    @Column(name = "foto")
+    private byte[] foto;
+
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
     private Long id;
@@ -181,6 +189,7 @@ public class Data implements Serializable {
         this.berlakuhingga = berlakuhingga;
     }
 
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -204,6 +213,14 @@ public class Data implements Serializable {
     @Override
     public String toString() {
         return "unu.jogja.project.ktp.Data[ id=" + id + " ]";
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
     
 }

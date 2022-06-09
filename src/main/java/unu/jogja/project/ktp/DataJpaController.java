@@ -14,7 +14,6 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import unu.jogja.project.ktp.exceptions.NonexistentEntityException;
-import unu.jogja.project.ktp.exceptions.PreexistingEntityException;
 
 /**
  *
@@ -30,22 +29,18 @@ public class DataJpaController implements Serializable {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-
-    public DataJpaController() {
-    }
+    
+    public DataJpaController(){
         
-    public void create(Data data) throws PreexistingEntityException, Exception {
+    }
+
+    public void create(Data data) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             em.persist(data);
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findData(data.getId()) != null) {
-                throw new PreexistingEntityException("Data " + data + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();

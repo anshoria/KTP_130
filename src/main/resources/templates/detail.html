@@ -19,77 +19,63 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <title>Edit KTP</title>
+    <title>Detail KTP</title>
   </head>
   <body>
     <div class="container-fluid">
-      <h3>Edit Data</h3>
+      <h3>Detail Data</h3>
       <hr />
     </div>
     <div class="container">
-        <form th:action="@{/update/{id}(id=${data.id})}" method="POST" enctype="multipart/form-data">
-
         <div class="mb-3">
           <label for="noktp">No KTP</label>
-          <input type="text" name="noktp" id="noktp" class="form-control" th:value="${data.noktp}" />
+          <span th:text="${data.noktp}"></span>
         </div>
           
         <div class="mb-3">
           <label for="nama">Nama</label>
-          <input type="text" name="nama" id="nama" class="form-control" th:value="${data.nama}"/>
+          <span th:text="${data.nama}"></span>
         </div>
           
         <div class="mb-3">
           <label for="tgllahir">Tanggal Lahir</label>
-          <input type="date" name="tgllahir" id="tgllahir" class="form-control" th:value="${#calendars.format(data.tgllahir, 'yyyy-MM-dd')}"/>
+          <span th:text="${data.tgllahir}"></span>
         </div>
           
         <div class="mb-3">
           <label for="jeniskelamin">Jenis Kelamin</label>
-          <input type="radio" name="jeniskelamin" value="Laki-Laki" required th:field="*{data.jeniskelamin}"/>
-          <span>Laki-Laki</span>
-          <input type="radio" name="jeniskelamin" value="Perempuan" required th:field="*{data.jeniskelamin}"/>
-          <span>Perempuan</span>
+          <span th:text="${data.jeniskelamin}"></span>
         </div>
           
         <div class="mb-3">
           <label for="alamat">Alamat</label>
-          <input type="text" name="alamat" id="alamat" class="form-control" th:value="${data.alamat}"/>
+          <span th:text="${data.alamat}"></span>
         </div>
           
         <div class="mb-3">
           <label for="agama">Agama</label>
-          <input type="text" name="agama" id="agama" class="form-control" th:value="${data.agama}"/>
+          <span th:text="${data.agama}"></span>
         </div>  
           
         <div class="mb-3">
           <label for="status">Status</label>
-          <input type="radio" name="status" value="Kawin" required th:field="*{data.status}"/>
-          <span>KAWIN</span>
-          <input type="radio" name="status" value="Belum Kawin" required th:field="*{data.status}"/>
-          <span>BELUM KAWIN</span>
+          <span th:text="${data.status}"></span>
         </div>
           
         <div class="mb-3">
           <label for="pekerjaan">Pekerjaan</label>
-          <input type="text" name="pekerjaan" id="pekerjaan" class="form-control" th:value="${data.pekerjaan}"/>
+          <span th:text="${data.pekerjaan}"></span>
         </div>
           
         <div class="mb-3">
           <label for="warganegara">Warga Negara</label>
-          <input type="radio" name="warganegara" value="WNI" required th:field="*{data.warganegara}"/>
-          <span>WNI</span>
-          <input type="radio" name="warganegara" value="WNA" required th:field="*{data.warganegara}"/>
-          <span>WNA</span>
+          <span th:text="${data.warganegara}"></span>
         </div>
           
         <div class="mb-3">
           <label for="id">Foto</label>
-          <input type="file" name="foto" class="form-control">
-          <img th:src="${foto}" class="mt-3" style="width:300px;">
+          <img th:src="${foto}" class="mt-3" style="width: 200px">
         </div>
-        <button type="submit" class="btn btn-primary mb-4">Simpan</button>
-      </form>
     </div>
   </body>
 </html>

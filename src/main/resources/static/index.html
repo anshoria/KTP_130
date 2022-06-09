@@ -12,22 +12,22 @@
     <body>
         <!--    <div th:insert="fragments/menu :: main_menu"></div>-->
 
-        <nav th:fragment="main_menu" class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav th:fragment="main_menu" class="navbar navbar-expand-lg navbar-light bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/data">Database</a>
+                <a class="navbar-brand text text-light" href="/data">Database</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active text text-light" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link text text-light" href="#">Link</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -38,13 +38,13 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
+                            <a class="nav-link disabled text text-light">Disabled</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>    
-        <div align="center">KTP Indonesia</div>
+        <div align="center" class="h1">KTP Indonesia</div>
 
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
