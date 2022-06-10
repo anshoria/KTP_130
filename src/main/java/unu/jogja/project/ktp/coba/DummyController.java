@@ -34,9 +34,9 @@ public class DummyController {
     return data;
     }
     
-    @RequestMapping("/create")
+    @RequestMapping("/tambah")
     public String createDummy(){
-        return "dummy/create";
+        return "dummy/tambah";
     }
     
     @PostMapping(value="/newdata", consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
@@ -55,6 +55,6 @@ public class DummyController {
         dumdata.setGambar(image);
         
         dummyController.create(dumdata);
-        return "dummy/create";
+        return "dummy/tambah";
     }
 }
